@@ -1,7 +1,8 @@
 
 <h2 align="center">文件說明</h2>
 
-<p>本資料集為PyETL課程之學習筆記，分為Lecture(工具程式碼)、Demo(案例實作)及Appendix(延伸示例)三部分。<br>
+<p>本資料集為PyETL課程之學習筆記，分為Lecture(工具程式碼)、Demo(案例實作)及Appendix(延伸示例)三部分。<br><br>
+
 Lecture主要羅列經典之爬蟲工具，依據主題及關聯編排七章節，均載明程式工具及備忘註解。<br>
 Demo為爬蟲實作，以PTT日本旅遊版、BabyHome美味料理版為範例，循序、逐步構築各功能，並檢附完整爬網程式碼。<br>
 Appendix則為延伸補充，包含進階工具及其他格式網頁之處理，code及備忘註解均已詳載供參。</p>
