@@ -2,7 +2,7 @@
 <h2 align="center">文件說明</h2>
 
 <p>本資料集為Python課程之學習筆記，以資料型態及函式之應用實例為主。<br>
-以<a href="https://www.runoob.com/python/python-100-examples.html">Python100例</a>為演練題庫，依據主題及關聯編排十個章節，文件中均已載明試題、參考解析及備忘註解供參。</p>
+以<a href="https://www.runoob.com/python/python-100-examples.html">Python100例</a>為演練題庫，依據主題及關聯編排十個章節，文件中均已載明試題、參考解析及備忘註解供參。<br></p>
 
 <pre>
 茲列章節綱要:
