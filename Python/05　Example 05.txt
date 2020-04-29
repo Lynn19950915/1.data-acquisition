@@ -1,24 +1,24 @@
 
-Example 05¡@°ò¥»¾Ş§@:¨ä¥L
+Example 05ã€€åŸºæœ¬æ“ä½œ: å…¶ä»–
 
 --------------------------------------------------------------------------------
 
-5-1 ¦r¨å¤§¥Í¦¨
+5-1 å­—å…¸ä¹‹ç”Ÿæˆ
 
-(1) Input :¨Ï¥ÎªÌ¦Û¥Ñ¿é¤J¦r¨å¤º®e(Áä-­È¹ï)
-    Output:¿é¥X¾ã¥»¦r¨å
+(1) Input :ä½¿ç”¨è€…è‡ªç”±è¼¸å…¥å­—å…¸å…§å®¹(éµ-å€¼å°)
+    Output:è¼¸å‡ºæ•´æœ¬å­—å…¸
 
 --------------------------------------------------------------------------------
 
 dict={}
 
 while True:
-    key=input("½Ğ¿é¤Jkey:")
-    value=input("½Ğ¿é¤Jvalue:")
-    #«ü©w¦r¨å¤¤¤§key¹ïÀ³value
+    key=input("è«‹è¼¸å…¥key:")
+    value=input("è«‹è¼¸å…¥value:")
+    #æŒ‡å®šå­—å…¸ä¸­ä¹‹keyå°æ‡‰value
     dict[key]=value
 
-    question=input("¬O§_Ä~Äò¿é¤J?(Y/N):")
+    question=input("æ˜¯å¦ç¹¼çºŒè¼¸å…¥?(Y/N):")
     if question in("Y", "y"):
         continue
     elif question in("N", "n"):
@@ -29,8 +29,8 @@ print(dict)
 
 --------------------------------------------------------------------------------
 
-(2) Input :¨Ï¥ÎªÌ¦Û¥Ñ¿é¤J¦r¨å¤º®e(Áä-­È¹ï)
-    Output:±N¦CªíÂà´«¬°¦r¨å¨Ã¿é¥X
+(2) Input :ä½¿ç”¨è€…è‡ªç”±è¼¸å…¥å­—å…¸å…§å®¹(éµ-å€¼å°)
+    Output:å°‡åˆ—è¡¨è½‰æ›ç‚ºå­—å…¸ä¸¦è¼¸å‡º
 
 --------------------------------------------------------------------------------
 
@@ -38,27 +38,27 @@ key_list=[]
 value_list=[]
 
 while True:
-    key=input("½Ğ¿é¤Jkey:")
-    value=input("½Ğ¿é¤Jvalue:")
+    key=input("è«‹è¼¸å…¥key:")
+    value=input("è«‹è¼¸å…¥value:")
     key_list.append(key)
     value_list.append(value)
 
-    question = input("¬O§_Ä~Äò¿é¤J?(Y/N):")
+    question = input("æ˜¯å¦ç¹¼çºŒè¼¸å…¥?(Y/N):")
     if question in("Y", "y"):
         continue
     elif question in("N", "n"):
         break
 
-#¥Hdict±N¦Cªí¹ïÀ³¶µ¦X¨Ö¡Adict¥»¨­¬O¤èªk¦Ó«D¦r¨å¦WºÙ
+#ä»¥dictå°‡åˆ—è¡¨å°æ‡‰é …åˆä½µï¼Œdictæœ¬èº«æ˜¯æ–¹æ³•è€Œéå­—å…¸åç¨±
 print(dict([key_list, value_list]))
 
 
 --------------------------------------------------------------------------------
 
-5-2 ¦r¨å¤§¨ú­È
+5-2 å­—å…¸ä¹‹å–å€¼
 
-Input :¨Ï¥ÎªÌ¦Û¥Ñ¿é¤J¦r¨å¤º®e(Áä-­È¹ï)
-Output:¿é¥X­È³Ì¤j¡B³Ì¤p¤§¶µ¥Ø
+Input :ä½¿ç”¨è€…è‡ªç”±è¼¸å…¥å­—å…¸å…§å®¹(éµ-å€¼å°)
+Output:è¼¸å‡ºå€¼æœ€å¤§ã€æœ€å°ä¹‹é …ç›®
 
 --------------------------------------------------------------------------------
 
@@ -66,75 +66,75 @@ key_list=[]
 value_list=[]
 
 while True:
-    key=input("½Ğ¿é¤Jkey:")
-    value=float(input("½Ğ¿é¤Jvalue:"))
-    #«ü©w¦r¨å¤¤¤§key¹ïÀ³value
+    key=input("è«‹è¼¸å…¥key:")
+    value=float(input("è«‹è¼¸å…¥value:"))
+    #æŒ‡å®šå­—å…¸ä¸­ä¹‹keyå°æ‡‰value
     key_list.append(key)
     value_list.append(value)
 
-    question=input("¬O§_Ä~Äò¿é¤J?(Y/N):")
+    question=input("æ˜¯å¦ç¹¼çºŒè¼¸å…¥?(Y/N):")
     if question in("Y", "y"):
         continue
     elif question in("N", "n"):
         break
 
-#¦r¨åµLªk°f¨ú¡A¦Cªí¥i±q¹ïÀ³¦ì¸m¤U¤â
+#å­—å…¸ç„¡æ³•é€†å–ï¼Œåˆ—è¡¨å¯å¾å°æ‡‰ä½ç½®ä¸‹æ‰‹
 maximum=value_list.index(max(value_list))
 
-#µL¶·³Ğ«Ø¦r¨å¡A¥u­n³]¸m®æ¦¡¦C¦L§Y¥i
-print("³Ì¤j­È: {%s:%d}"%(key_list[maximum], value_list[maximum]))
+#ç„¡é ˆå‰µå»ºå­—å…¸ï¼Œåªè¦è¨­ç½®æ ¼å¼åˆ—å°å³å¯
+print("æœ€å¤§å€¼: {%s:%d}"%(key_list[maximum], value_list[maximum]))
 minimum=value_list.index(min(value_list))
-print("³Ì¤p­È: {%s:%d}"%(key_list[minimum], value_list[minimum]))
+print("æœ€å°å€¼: {%s:%d}"%(key_list[minimum], value_list[minimum]))
 
 
 --------------------------------------------------------------------------------
 
-5-3 ÀÉ®×¤§Åª¼g:
+5-3 æª”æ¡ˆä¹‹è®€å¯«:
 
-(1) Input :¨Ï¥ÎªÌ³v¦æ¿é¤J¤º®e¡Aª½¦ÜÁä¤J"#"²Å¸¹
-    Output:¶}¤@ÀÉ®×¸ô®|¡A±N¿é¤J¦r¦êÂà¬°¤j¼g«áÀx¤J¤åÀÉ
+(1) Input :ä½¿ç”¨è€…é€è¡Œè¼¸å…¥å…§å®¹ï¼Œç›´è‡³éµå…¥"#"ç¬¦è™Ÿ
+    Output:é–‹ä¸€æª”æ¡ˆè·¯å¾‘ï¼Œå°‡è¼¸å…¥å­—ä¸²è½‰ç‚ºå¤§å¯«å¾Œå„²å…¥æ–‡æª”
 
 --------------------------------------------------------------------------------
 
-fileName=input("½Ğ¿é¤JÀÉ¦W:")
+fileName=input("è«‹è¼¸å…¥æª”å:")
 
-#¶}±ÒÀÉ®×¡A³]©w¸ô®|»PÅª¼g®æ¦¡
+#é–‹å•Ÿæª”æ¡ˆï¼Œè¨­å®šè·¯å¾‘èˆ‡è®€å¯«æ ¼å¼
 file1=open("C:/Users/USER/Desktop/%s.txt"%(fileName), "w")
-text=input("½Ğ¿é¤J¤º®e:")
+text=input("è«‹è¼¸å…¥å…§å®¹:")
 while "#" not in text:
     file1.write(text.upper()+"\n")
-    text=input("½ĞÄ~Äò¿é¤J¤º®e:") 
+    text=input("è«‹ç¹¼çºŒè¼¸å…¥å…§å®¹:") 
 
 file1.close()
 
 
 --------------------------------------------------------------------------------
 
-(2) Input :¨Ï¥ÎªÌ©ó¨âÀÉ®×¦Û¥Ñ¿é¤J¦U¤@¦æ¦r²Å
-    Output:¶}¤@ÀÉ®×¸ô®|¡AÅª¨ú¨âÀÉ®×¨Ã¨Ì¦r¥À¶¶§Ç¦X¨Ö«áÀx¤J¤åÀÉ
+(2) Input :ä½¿ç”¨è€…æ–¼å…©æª”æ¡ˆè‡ªç”±è¼¸å…¥å„ä¸€è¡Œå­—ç¬¦
+    Output:é–‹ä¸€æª”æ¡ˆè·¯å¾‘ï¼Œè®€å–å…©æª”æ¡ˆä¸¦ä¾å­—æ¯é †åºåˆä½µå¾Œå„²å…¥æ–‡æª”
 
 --------------------------------------------------------------------------------
  
 context=[]
 
-#°j°é«Ø¥ß¨âÀÉ®×
+#è¿´åœˆå»ºç«‹å…©æª”æ¡ˆ
 for i in range(0, 2):
-    file=input("½Ğ¿é¤JÀÉ¦W:")
+    file=input("è«‹è¼¸å…¥æª”å:")
     with open("C:/Users/USER/Desktop/%s.txt"%(file), "w") as w:
-        text=input("½Ğ¿é¤J¤º®e:")
+        text=input("è«‹è¼¸å…¥å…§å®¹:")
         w.write(text)
         w.close()
 
-    #w¼g¤J¡BrÅª¥X¡A¥Hlist¨ú¶µ¤è¦¡³v¦r²Å¼g¤J¦Cªí¡A¥H§Q¦r¥À±Æ§Ç
+    #wå¯«å…¥ã€rè®€å‡ºï¼Œä»¥listå–é …æ–¹å¼é€å­—ç¬¦å¯«å…¥åˆ—è¡¨ï¼Œä»¥åˆ©å­—æ¯æ’åº
     with open("C:/Users/USER/Desktop/%s.txt"%(file), "r") as r:
         for item in list(r.read()):
             context.append(item)
         r.close()
 
 context.sort()
-file=input("½Ğ¿é¤J¦X¨ÖÀÉ¦W:")
+file=input("è«‹è¼¸å…¥åˆä½µæª”å:")
 with open("C:/Users/USER/Desktop/%s.txt"%(file), "w") as w:
-    #write¥u¾A¥Î¦r¦ê¡A»İ¨ú¥X¦Cªí¶µ¼g¤J
+    #writeåªé©ç”¨å­—ä¸²ï¼Œéœ€å–å‡ºåˆ—è¡¨é …å¯«å…¥
     for item in context
         w.write(item)
     w.close()
