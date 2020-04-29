@@ -2,7 +2,7 @@
   <head>
   </head>
   <body>
-    <h1 style="text-align: center">文件說明</h1>
+    <h1 align="center">文件說明</h1>
   </body?
 </html>
 
