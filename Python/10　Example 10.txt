@@ -1,145 +1,145 @@
 
-Example 10�@���ҹ��-2
+Example 10　情境實例(2)
 
 --------------------------------------------------------------------------------
 
-10-1 �ƶb���q���D:
+10-1 數軸分段問題:
 
-(1) Input :�ϥΪ̿�J�����T(�褸�~�B����Τ��)
-    Output:��ܤ�����Ӧ~�פ��ĴX��
+(1) Input :使用者輸入日期資訊(西元年、月份及日期)
+    Output:顯示日期為該年度之第幾天
 
 --------------------------------------------------------------------------------
 
-year =int(input("��J�褸�~:"))
-month=int(input("�п�J���:"))
-date =int(input("�п�J���:"))
+year =int(input("輸入西元年:"))
+month=int(input("請輸入月份:"))
+date =int(input("請輸入日期:"))
 day=0
 
 norm=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-#�|�~�W�h:�{�|�h�|�B�{�ʤ��|�B�{�|�ʦA�|
+#閏年規則:逢四則閏、逢百不閏、逢四百再閏
 if year%4!=0:
-    print("%d�~�����~"%(year))
+    print("%d年為平年"%(year))
 
-#�|�����Ƭ����~:����100�����ƦӤ��㰣400
+#四的倍數為平年:必為100之倍數而不整除400
 elif year%100==0 and year%400!=0:
-    print("%d�~�����~"%(year))
+    print("%d年為平年"%(year))
 else:
     norm[1]=29
-    print("%d�~���|�~"%(year))
+    print("%d年為閏年"%(year))
 
-#�����N�A�Ȼݲ֥[��N-1��A�Y��N-2��
+#月份為N，僅需累加至N-1月，即第N-2項
 for i in range(0, month-1):
     day+=norm[i]
 day+=date
-print("%d��%d��O%d�~����%d��"%(month, date, year, day))
+print("%d月%d日是%d年的第%d天"%(month, date, year, day))
 
 
 --------------------------------------------------------------------------------
 
-(2) Input :���q����Z�Ĥ��Ƥ��W�w�p�U(1)15��(�t)�H�U�̡A�C�ײֿn1�I�n��        �A�ϥΪ̦ۥѿ�J�����ץ��
-                                     (2)25��(�t)�H�U�̡A���X�����C�ײֿn2�I�n��
-                                     (3)30��(�t)�H�U�̡A���X�����C�ײֿn3�I�n��
-                                     (4)���X30�󤧳����A�C�ײֿn5�I�n��
-    Output:��ܸӧ��׼ƥi��o���Z�Ĥ���
+(2) Input :公司對於績效分數之規定如下(1)15件(含)以下者，每案累積1點積分        ，使用者自由輸入完成案件數
+                                     (2)25件(含)以下者，高出部分每案累積2點積分
+                                     (3)30件(含)以下者，高出部分每案累積3點積分
+                                     (4)高出30件之部分，每案累積5點積分
+    Output:顯示該完案數可獲得之績效分數
 
 --------------------------------------------------------------------------------
  
-case=int(input("�п�J�����ץ��:"))
-#�ƶb���q�Acase�N�P�U�@������A�C���ݦh�g����(���p��Ӹ��X�j��)
+case=int(input("請輸入完成案件數:"))
+#數軸分段，case將與下一項比較，列表需多寫末項(必小於而跳出迴圈)
 caselist=[0, 15, 25, 30, case+1]
 pointlist=[1, 2, 3, 5]
 point=0
 
 for i in range(len(caselist)):
-    #�Y�W�L�U�@���A�h�ֱo�Ӭq�Ҧ��I�ơװ϶�����*����
+    #若超過下一項，則累得該段所有點數＝區間長度*分值
     if case>=caselist[i+1]:
         point+=(caselist[i+1]-caselist[i])*pointlist[i]
-    #�Y���F�U�@���A�h���⥻�q�Ҳ��I�ơ׺I�b����*���ȡA�����j��
+    #若未達下一項，則結算本段所累點數＝截軸長度*分值，結束迴圈
     else:
         point+=(case-caselist[i])*pointlist[i]
         break
 
-print("���׼�%d�A�i��o�Z��%d�I"%(case, point))
+print("完案數%d，可獲得績效%d點"%(case, point))
 
 
 --------------------------------------------------------------------------------
 
-10-2 �n�U����D:
+10-2 獼猴桃問題:
 
-(1) Input :�w���n�U�ߺD�C�ѥ��@����A�Y���l�ѥb�ơA�ϥΪ̦ۥѿ�J�ѳ̫�@���窺���
-    Output:����n�U�Ĥ@�Ѿ֦�����l��
+(1) Input :已知獼猴習慣每天丟棄一顆桃再吃掉餘剩半數，使用者自由輸入剩最後一顆桃的日數
+    Output:顯示獼猴第一天擁有的桃子數
 
 --------------------------------------------------------------------------------
 
-day=int(input("�п�J�n�U�Y����:"))
-#�˧Ǻ�^�A�Hpeach�ܼƳv��W�g�^list
+day=int(input("請輸入獼猴吃桃日數:"))
+#倒序算回，以peach變數逐日增寫回list
 peach=0
 list=[]
 
 if day>=1:
     for i in range(0, day):
-        #�e����=�����Ƥ��⭿+1
+        #前日桃數=當日桃數之兩倍+1
         peach=2*peach+1
         list.append(peach)
-    #���⭺���ơA�Y�ϧǿ�Xlist������
-    print("�n�U�Ĥ@�Ѿ֦�%d����l"%(list[-1]))
+    #推算首日桃數，即反序輸出list之末項
+    print("獼猴第一天擁有%d顆桃子"%(list[-1]))
 else:
-    print("��J���~")
+    print("輸入有誤")
   
        
 --------------------------------------------------------------------------------
 
-(2) Input :�����U�l����A�����@����������������@���F�A��ѤU�쭫�ư��榹�B
-�@�@Output:�̫�Ҧ��U�l���i�����������l�A�D��Ʀܤ֬���
+(2) Input :五隻猴子分桃，先丟棄一顆後取走五等分之一份；再交由下位重複執行此步
+　　Output:最後所有猴子均可取走整數顆桃子，求桃數至少為何
 
 --------------------------------------------------------------------------------
 
-#������Ѥ������|�A�G�˺�i��:���e����Ƭ�����1.25��+1
+#取完後剩五分之四，故倒算可知:取前之桃數為取後1.25倍+1
 peach=1
 monkey=1
 trys=1
 
-#��N���U�l�������u�@�A�����������\�ɧY��X
+#第N隻猴子執行分桃工作，當五隻均成功時即輸出
 while monkey<6:
-    #trys�i�j�����A��ƻ��j�˱�
+    #trys可迴圈執行，桃數遞迴倒推
     if int(1.25*trys)==1.25*trys:
         trys=1.25*trys+1
         monkey+=1
     else:
-�@�@�@�@#�C�����祢�ѡApeach���U�֭p�ӵU�l�M�s
+　　　　#每當分桃失敗，peach往下累計而猴子清零
         peach+=1
         monkey=1
-�@�@�@�@#trys�Ppeach���}�H�����j��Ƹ��L�Y�ǭ�
+　　　　#trys與peach分開以防遞迴桃數跳過某些值
         trys=peach
 
-print("��Ʀܤ֬�%d"%(trys))
+print("桃數至少為%d"%(trys))
 
 
 --------------------------------------------------------------------------------
 
-10-3 ���ư��D:
+10-3 報數問題:
 
-Input :�ϥΪ̦ۥѿ�J�H��
-Output:�]��n�H�����ơA�Z����3�̰h�X��l�A�D�̲ׯd�U�̬���l�s���Y�z��
+Input :使用者自由輸入人數
+Output:設有n人圍圈報數，凡報至3者退出圈子，求最終留下者為初始編號若干者
 
 --------------------------------------------------------------------------------
 
-number=int(input("�п�J�`�H��:"))
+number=int(input("請輸入總人數:"))
 list=[]
 for i in range(number):
     list.append(i+1)
 
-#��n�����ơA���U�֥[
+#第n次報數，往下累加
 n=1
 while len(list)>1:
-    #�C�T���^�O�@�H�A�w�����C������
+    #每三輪淘汰一人，逕移除列表首項
     if n%3==0:
         list.pop(0)
     else:
-        #�R���÷s�W:�N�������ܦC�����̥�(len(list))
+        #刪除並新增:將首項移至列表之最末(len(list))
         list.insert(len(list), list.pop(0))
     n+=1
 
-#�C���ѳ�@�����ɲפ�ÿ�X
+#列表剩單一元素時終止並輸出
 print(data)
