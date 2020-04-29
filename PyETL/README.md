@@ -10,7 +10,7 @@
 茲列章節綱要:
 
 Lecture 01　爬網初覽
-Lecture 02　headers,Cookies資訊
+Lecture 02　headers, Cookies資訊
 Lecture 03　標籤定位與文字查取
 Lecture 04　圖片查取及下載
 Lecture 05　資料儲檔(1)
