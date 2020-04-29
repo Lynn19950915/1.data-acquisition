@@ -1,5 +1,5 @@
 
-Demo 03¡@ª¦¨ú½×¾Â¦h­¶¼ĞÃD:¤£³W«h«¬
+Demo 03ã€€çˆ¬å–è«–å£‡å¤šé æ¨™é¡Œ: ä¸è¦å‰‡å‹
 
 --------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
-#³Ì·s­¶­±¡AµL»İ±a¼Æ¦r°Ñ¼Æ
+#æœ€æ–°é é¢ï¼Œç„¡éœ€å¸¶æ•¸å­—åƒæ•¸
 url="https://www.ptt.cc/bbs/Japan_Travel/index.html"
 req=request.Request(url=url, headers=headers)
 res=request.urlopen(req)
@@ -33,8 +33,8 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 url="https://www.ptt.cc/bbs/Japan_Travel/index.html"
 
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
-#°j°é°õ¦æpages¦¸
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
+#è¿´åœˆåŸ·è¡Œpagesæ¬¡
 for i in range(pages):
     req=request.Request(url=url, headers=headers)
     res=request.urlopen(req)
@@ -45,9 +45,9 @@ for i in range(pages):
         articleTitle=item.a.text
         articleUrl="https://www.ptt.cc"+item.a['href']
 
-    #´M§ä¤W¡B¤U­¶«ö¶s¤§¼ĞÅÒ
+    #å°‹æ‰¾ä¸Šã€ä¸‹é æŒ‰éˆ•ä¹‹æ¨™ç±¤
     button=soup.findAll("a", {"class":"btn wide"})
-    #¦Cªí¤¤¨ú¶µÂĞ¼g¡A¦¨¬°·surl
+    #åˆ—è¡¨ä¸­å–é …è¦†å¯«ï¼Œæˆç‚ºæ–°url
     url="https://www.ptt.cc/"+button[1]['href']
 
 
@@ -59,9 +59,9 @@ from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-#¨Ï¥ÎªÌ¦Û­qÀÉ®×¦s©ñ¸ô®|
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+#ä½¿ç”¨è€…è‡ªè¨‚æª”æ¡ˆå­˜æ”¾è·¯å¾‘
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -69,7 +69,7 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 url="https://www.ptt.cc/bbs/Japan_Travel/index.html"
 
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 for i in range(pages):
     req=request.Request(url=url, headers=headers)
     res=request.urlopen(req)
@@ -80,7 +80,7 @@ for i in range(pages):
         articleTitle=item.a.text
         articleUrl="https://www.ptt.cc"+item.a['href']
 
-        #¶}ÀÉ(a-mode)ªş¥[¼g¤J
+        #é–‹æª”(a-mode)é™„åŠ å¯«å…¥
         file=open("%s/%s.csv"%(dir, filename), "a", encoding="utf-8")
         file.write(articleTitle+"\n"+articleUrl+"\n")
         file.close()
@@ -97,8 +97,8 @@ from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -106,8 +106,8 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 url="https://www.ptt.cc/bbs/Japan_Travel/index.html"
 
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
-#²Ö¿n³ø¿ù¼Æ¡A¨Ñµ²ªG¿é¥X
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
+#ç´¯ç©å ±éŒ¯æ•¸ï¼Œä¾›çµæœè¼¸å‡º
 error=0
 for i in range(pages):
     req=request.Request(url=url, headers=headers)
@@ -123,26 +123,26 @@ for i in range(pages):
             file=open("%s/%s.csv"%(dir, filename), "a", encoding="utf-8")
             file.write(articleTitle+"\n"+articleUrl+"\n")
             file.close()
-        #·ítitle=none(¦p¤å³¹³Q§R°£)«hraise AttributeError
+        #ç•¶title=none(å¦‚æ–‡ç« è¢«åˆªé™¤)å‰‡raise AttributeError
         except AttributeError:
             error+=1
 
     button=soup.findAll("a", {"class":"btn wide"})
     url="https://www.ptt.cc/"+button[1]['href']
 
-print("ª¦ÂÎµ²§ô¡A¦³%d½g¤å³¹¤w³Q§R°£"%(error))
+print("çˆ¬èŸ²çµæŸï¼Œæœ‰%dç¯‡æ–‡ç« å·²è¢«åˆªé™¤"%(error))
 
 
 --------------------------------------------------------------------------------
 
-Input 3-1¡@#PTT¤é¥»®È¹Cª©
+Input 3-1ã€€#PTTæ—¥æœ¬æ—…éŠç‰ˆ
 
 from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -150,7 +150,7 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 url="https://www.ptt.cc/bbs/Japan_Travel/index.html"
 
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 error=0
 for i in range(pages):
     req=request.Request(url=url, headers=headers)
@@ -172,19 +172,19 @@ for i in range(pages):
     button=soup.findAll("a", {"class":"btn wide"})
     url="https://www.ptt.cc/"+button[1]['href']
 
-print("ª¦ÂÎµ²§ô¡A¦³%d½g¤å³¹¤w³Q§R°£"%(error))
+print("çˆ¬èŸ²çµæŸï¼Œæœ‰%dç¯‡æ–‡ç« å·²è¢«åˆªé™¤"%(error))
 
 
 --------------------------------------------------------------------------------
 
-Input 3-2¡@#BabyHome¬ü¨ı®Æ²zª©
+Input 3-2ã€€#BabyHomeç¾å‘³æ–™ç†ç‰ˆ
 
 from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -192,7 +192,7 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 url="https://forum.babyhome.com.tw/list/1035"
 
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 error=0
 for i in range(pages):
     req=request.Request(url=url, headers=headers)
@@ -214,4 +214,4 @@ for i in range(pages):
     button=soup.find("li", {"class":"next"})
     url=button.a['href']
 
-print("ª¦ÂÎµ²§ô¡A¦³%d½g¤å³¹¤w³Q§R°£"%(error))
+print("çˆ¬èŸ²çµæŸï¼Œæœ‰%dç¯‡æ–‡ç« å·²è¢«åˆªé™¤"%(error))
