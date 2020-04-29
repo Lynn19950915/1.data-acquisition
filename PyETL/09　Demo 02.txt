@@ -1,5 +1,5 @@
 
-Demo 02¡@ª¦½×¾Â¦h­¶¼ĞÃD:³W«h«¬
+Demo 02ã€€çˆ¬è«–å£‡å¤šé æ¨™é¡Œ: è¦å‰‡å‹
 
 --------------------------------------------------------------------------------
 
@@ -12,9 +12,9 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 
 index=7055
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 while index>7055-pages:
-    #¥iÅÜºô§}¥H®æ¦¡¤Æ¦r²Å¨ú¥N¡A¼g©ó°j°é¤º
+    #å¯è®Šç¶²å€ä»¥æ ¼å¼åŒ–å­—ç¬¦å–ä»£ï¼Œå¯«æ–¼è¿´åœˆå…§
     url="https://www.ptt.cc/bbs/Japan_Travel/index%d.html"%(index)
     req=request.Request(url=url, headers=headers)
     res=request.urlopen(req)
@@ -35,9 +35,9 @@ from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-#¨Ï¥ÎªÌ¦Û­qÀÉ®×¦s©ñ¸ô®|
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+#ä½¿ç”¨è€…è‡ªè¨‚æª”æ¡ˆå­˜æ”¾è·¯å¾‘
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -45,7 +45,7 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 
 index=7055
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 while index>7055-pages:
     url="https://www.ptt.cc/bbs/Japan_Travel/index%d.html"%(index)
     req=request.Request(url=url, headers=headers)
@@ -57,7 +57,7 @@ while index>7055-pages:
         articleTitle=item.a.text
         articleUrl="https://www.ptt.cc"+item.a['href']
 
-        #¶}ÀÉ(a-mode)ªş¥[¼g¤J
+        #é–‹æª”(a-mode)é™„åŠ å¯«å…¥
         file=open("%s/%s.csv"%(dir, filename), "a", encoding="utf-8")
         file.write(articleTitle+"\n"+articleUrl+"\n")
         file.close()
@@ -72,8 +72,8 @@ from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -81,8 +81,8 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 
 index=7055
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
-#²Ö¿n³ø¿ù¼Æ¡A¨Ñµ²ªG¿é¥X
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
+#ç´¯ç©å ±éŒ¯æ•¸ï¼Œä¾›çµæœè¼¸å‡º
 error=0
 while index>7055-pages:
     url="https://www.ptt.cc/bbs/Japan_Travel/index%d.html"%(index)
@@ -99,24 +99,24 @@ while index>7055-pages:
             file=open("%s/%s.csv"%(dir, filename), "a", encoding="utf-8")
             file.write(articleTitle+"\n"+articleUrl+"\n")
             file.close()        
-        #·ítitle=none(¦p¤å³¹³Q§R°£)«hraise AttributeError
+        #ç•¶title=none(å¦‚æ–‡ç« è¢«åˆªé™¤)å‰‡raise AttributeError
         except AttributeError:
             error+=1
     index-=1
 
-print("ª¦ÂÎµ²§ô¡A¦³%d½g¤å³¹¤w³Q§R°£"%(error))
+print("çˆ¬èŸ²çµæŸï¼Œæœ‰%dç¯‡æ–‡ç« å·²è¢«åˆªé™¤"%(error))
 
 
 --------------------------------------------------------------------------------
 
-Input 2-1¡@#PTT¤é¥»®È¹Cª©
+Input 2-1ã€€#PTTæ—¥æœ¬æ—…éŠç‰ˆ
 
 from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -124,7 +124,7 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 
 index=7055
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 error=0
 while index>7055-pages:
     url="https://www.ptt.cc/bbs/Japan_Travel/index%d.html"%(index)
@@ -145,19 +145,19 @@ while index>7055-pages:
             error+=1
     index-=1
 
-print("ª¦ÂÎµ²§ô¡A¦³%d½g¤å³¹¤w³Q§R°£"%(error))
+print("çˆ¬èŸ²çµæŸï¼Œæœ‰%dç¯‡æ–‡ç« å·²è¢«åˆªé™¤"%(error))
 
 
 --------------------------------------------------------------------------------
 
-Input 2-2¡@#BabyHome¬ü¨ı®Æ²zª©
+Input 2-2ã€€#BabyHomeç¾å‘³æ–™ç†ç‰ˆ
 
 from urllib import request
 from bs4 import BeautifulSoup
 import os
 
-dir=input("¿é¤JÀÉ®×¸ô®|:")
-filename=input("¿é¤JÀÉ¦W:")
+dir=input("è¼¸å…¥æª”æ¡ˆè·¯å¾‘:")
+filename=input("è¼¸å…¥æª”å:")
 if not os.path.exists(dir):
     os.mkdir(dir)
 
@@ -165,7 +165,7 @@ headers={"Cookie":"over18=1",
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"}
 
 index=1
-pages=int(input("±ıª¦¨ú­¶­±¼Æ¶q:"))
+pages=int(input("æ¬²çˆ¬å–é é¢æ•¸é‡:"))
 error=0
 while index<pages+1:
     url="https://forum.babyhome.com.tw/list/1035?page=%d"%(index)
@@ -186,4 +186,4 @@ while index<pages+1:
             error+=1
     index+=1
 
-print("ª¦ÂÎµ²§ô¡A¦³%d½g¤å³¹¤w³Q§R°£"%(error))
+print("çˆ¬èŸ²çµæŸï¼Œæœ‰%dç¯‡æ–‡ç« å·²è¢«åˆªé™¤"%(error))
