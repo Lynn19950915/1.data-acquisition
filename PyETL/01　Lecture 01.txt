@@ -41,6 +41,6 @@ from bs4 import BeautifulSoup
 url="https://www.businessweekly.com.tw/channel/englishlearning/0000000335"
 res=request.urlopen(url)
 #以BeautifulSoup將所獲訊息(res)進行解碼，且可被定位
-soup=BeautifulSoup(res,"html.parser")
+soup=BeautifulSoup(res, "html.parser")
 
 print(soup)
